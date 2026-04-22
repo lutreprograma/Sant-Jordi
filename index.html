@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sant Jordi - Actividad</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sant Jordi</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #8e44ad, #3498db, #6c3483);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    padding: 20px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* por si en móvil se bajan */
+    padding: 20px;
+}
+
+.bloque {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.bloque:hover {
+    transform: scale(1.05);
+}
+
+.bloque img {
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid white;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="nav-buttons">
-        <button class="btn-nav" id="btn-volver">← Volver</button>
-        <button class="btn-nav" id="btn-siguiente">Siguiente →</button>
-    </div>
+<h1>🌹 Sant Jordi</h1>
 
-    <div class="main-card">
-        <div class="image-container">
-            <img src="assets/sant1.png" alt="Imagen Sant Jordi" id="main-image">
-        </div>
+<div class="contenedor">
 
-        <div class="audio-list">
-            <div class="audio-row">
-                <img src="https://flagcdn.com/w80/es.png" class="flag">
-                <audio controls id="audio-es">
-                    <source src="assets/sant1_es.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="audio-row">
-                <div class="flag-placeholder" style="background:green; color:white; padding:5px; border-radius:4px;">العربية</div>
-                <audio controls id="audio-ar">
-                    <source src="assets/sant1_ar.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-        </div>
-    </div>
+    <a href="sant1.html" class="bloque">
+        <img src="sant1.png" alt="Sant Jordi 1">
+    </a>
 
-    <script>
-        let pasoActual = 1;
-        const totalPasos = 4;
+    <a href="sant2.html" class="bloque">
+        <img src="sant2.png" alt="Sant Jordi 2">
+    </a>
 
-        const img = document.getElementById('main-image');
-        const audioEs = document.getElementById('audio-es');
-        const audioAr = document.getElementById('audio-ar');
+    <a href="sant3.html" class="bloque">
+        <img src="sant3.png" alt="Sant Jordi 3">
+    </a>
 
-        function actualizarContenido() {
-            img.src = `assets/sant${pasoActual}.png`;
-            audioEs.src = `assets/sant${pasoActual}_es.mp3`;
-            audioAr.src = `assets/sant${pasoActual}_ar.mp3`;
-            audioEs.load();
-            audioAr.load();
-        }
+    <a href="sant4.html" class="bloque">
+        <img src="sant4.png" alt="Sant Jordi 4">
+    </a>
 
-        document.getElementById('btn-siguiente').onclick = () => {
-            if (pasoActual < totalPasos) { pasoActual++; actualizarContenido(); }
-        };
+</div>
 
-        document.getElementById('btn-volver').onclick = () => {
-            if (pasoActual > 1) { pasoActual--; actualizarContenido(); }
-        };
-    </script>
 </body>
 </html>
