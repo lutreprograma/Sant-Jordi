@@ -41,6 +41,56 @@ h1 {
     border: 4px solid white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
+/* NAV BOTONES */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-bottom: 20px;
+}
+
+.boton {
+    background-color: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: rgba(255,255,255,0.4);
+}
+
+/* IMAGEN GRANDE */
+.imagen-grande {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.imagen-grande img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 20px;
+    border: 4px solid white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* AUDIO */
+.audio-box {
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 20px;
+}
+
+audio {
+    width: 100%;
+}
 
 /* 📱 RESPONSIVE PARA MÓVIL */
 @media (max-width: 700px) {
@@ -58,5 +108,18 @@ h1 {
 
     .bloque img {
         height: 200px;
+    }
+    @media (max-width: 700px) {
+
+    .nav {
+        padding: 0 20px;
+    }
+
+    .imagen-grande img {
+        width: 95%;
+    }
+
+    .audio-box {
+        width: 90%;
     }
 }
