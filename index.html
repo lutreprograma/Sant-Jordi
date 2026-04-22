@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sant Jordi - Actividad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="nav-buttons">
+        <button class="btn-nav" id="btn-volver">← Volver</button>
+        <button class="btn-nav" id="btn-siguiente">Siguiente →</button>
+    </div>
+
+    <div class="main-card">
+        <div class="image-container">
+            <img src="assets/sant1.png" alt="Imagen Sant Jordi" id="main-image">
+        </div>
+
+        <div class="audio-list">
+            <div class="audio-row">
+                <img src="https://flagcdn.com/w80/es.png" class="flag">
+                <audio controls id="audio-es">
+                    <source src="assets/sant1_es.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="audio-row">
+                <div class="flag-placeholder" style="background:green; color:white; padding:5px; border-radius:4px;">العربية</div>
+                <audio controls id="audio-ar">
+                    <source src="assets/sant1_ar.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let pasoActual = 1;
+        const totalPasos = 4;
+
+        const img = document.getElementById('main-image');
+        const audioEs = document.getElementById('audio-es');
+        const audioAr = document.getElementById('audio-ar');
+
+        function actualizarContenido() {
+            img.src = `assets/sant${pasoActual}.png`;
+            audioEs.src = `assets/sant${pasoActual}_es.mp3`;
+            audioAr.src = `assets/sant${pasoActual}_ar.mp3`;
+            audioEs.load();
+            audioAr.load();
+        }
+
+        document.getElementById('btn-siguiente').onclick = () => {
+            if (pasoActual < totalPasos) { pasoActual++; actualizarContenido(); }
+        };
+
+        document.getElementById('btn-volver').onclick = () => {
+            if (pasoActual > 1) { pasoActual--; actualizarContenido(); }
+        };
+    </script>
+</body>
+</html>
